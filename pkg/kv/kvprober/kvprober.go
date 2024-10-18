@@ -425,6 +425,7 @@ func (p *Prober) readProbeImpl(ctx context.Context, ops proberOpsI, txns proberT
 	}
 
 	d := timeutil.Since(start)
+	isTracingEnabled = true
 	// Extract leaseholder information from the trace recording if enabled.
 	if isTracingEnabled {
 		leaseholder := p.returnLeaseholderInfo(finishAndGetRecording())
