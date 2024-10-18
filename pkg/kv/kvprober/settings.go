@@ -28,7 +28,7 @@ var readEnabled = settings.RegisterBoolSetting(
 	settings.ApplicationLevel,
 	"kv.prober.read.enabled",
 	"whether the KV read prober is enabled",
-	false)
+	true)
 
 // TODO(josh): Another option is for the cluster setting to be a QPS target
 // for the cluster as a whole.
@@ -57,7 +57,7 @@ var writeEnabled = settings.RegisterBoolSetting(
 	settings.ApplicationLevel,
 	"kv.prober.write.enabled",
 	"whether the KV write prober is enabled",
-	false)
+	true)
 
 var writeInterval = settings.RegisterDurationSetting(
 	settings.ApplicationLevel,

@@ -148,7 +148,7 @@ func RecoverAndReportPanic(ctx context.Context, sv *settings.Values) {
 func RecoverAndReportNonfatalPanic(ctx context.Context, sv *settings.Values) {
 	if r := recover(); r != nil {
 		ReportPanic(ctx, sv, r, depthForRecoverAndReportPanic)
-		if !build.IsRelease() || PanicOnAssertions.Get(sv) {
+		if /*!build.IsRelease() || */ PanicOnAssertions.Get(sv) {
 			panic(r)
 		}
 	}
